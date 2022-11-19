@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  /* max-width: 100vh; */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  grid-row: 1;
+  grid-column: 1/7;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(1px + 2vmin);
+  color: white;
+}
+
+.App-body {
+  grid-column: 1/7;
+  grid-row: 2/6;
+  display: grid;
+  grid-template-rows: repeat (6, 1fr);
+}
+
+/* .App-search {
+  grid-row: 1/1;
+  grid-column: 1/7;
+  background-color: azure;
+} */
+
+.App-map {
+  position: relative;
+  grid-row: 1/6;
+  grid-column: 1/7;
+  margin:.5%; 
+}
+
