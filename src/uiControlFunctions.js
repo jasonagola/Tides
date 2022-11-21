@@ -4,7 +4,7 @@ import { toggleTideDropDown } from './features/uiControl/uiControlSlice';
 
 
 const mapClickTideToggle = () => {
-    const tideToggleState = store.getState().ui.tideDropDown
+    const tideToggleState = store.getState().uiControl.tideDropDown
     if (tideToggleState === true) {
         store.dispatch(toggleTideDropDown())
     }

@@ -4,7 +4,7 @@ import store from './features/store';
 import { useSelector } from 'react-redux';
 import { searchParamsPosition, updateName, updatePosition, mapCenterData, updateMapCenter } from './features/searchParams/searchParamsSlice';
 import { selectReportingPosition, selectMareaApiStatus } from './features/tide/tideSlice';
-import {mapClickTideToggle, tideSearchButton} from './uiControlFunctions';
+import { mapClickTideToggle, tideSearchButton} from './uiControlFunctions';
 
 
 const options = {
@@ -68,7 +68,8 @@ function Map(isLoaded) {
 
 
     const onMapClick = (event) => {
-        const tideToggleState = store.getState().ui.tideDropDown
+        const tideToggleState = store.getState().uiControl.tideDropDown
+        console.log(tideToggleState)
         if (!tideToggleState) {
             // console.log("onMapClick", event)
             const position = ({lat: event.latLng.lat(), lng: event.latLng.lng()})

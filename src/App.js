@@ -34,13 +34,13 @@ if(!isLoaded) {
       </div>
 
       <div className="App-body">
-      <SmoothCollapse expanded={collapseState}>
+        <SmoothCollapse expanded={collapseState} collapsedHeight={0}>
       
-        <div className="App-search">
+          <div className="App-Info">
             <TideChartDisplay/>
             <TideInfo/> 
-        </div> 
-      </SmoothCollapse>
+          </div> 
+        </SmoothCollapse>
     
         
         <div className="App-map">
