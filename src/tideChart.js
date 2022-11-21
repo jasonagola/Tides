@@ -37,7 +37,7 @@ function TideChart() {
     if (extremes!=[]) {
         return (
             <ResponsiveContainer width='100%' height={200}>
-                <AreaChart data={data}>
+                <AreaChart data={data} width='90%'>
                         <Area type="monotone" label='true' dataKey='value' stroke='#2451B7' fillColor="url(#color)" fontSize={10}/>
                         <XAxis 
                             dataKey='date' 

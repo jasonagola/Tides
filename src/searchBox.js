@@ -91,7 +91,7 @@ function SearchBox() {
                 style={{
                     boxSizing: `border-box`,
                     border: `1px solid transparent`,
-                    width: `500px`,
+                    width: `50%`,
                     height: `32px`,
                     padding: `0 12px`,
                     borderRadius: `3px`,

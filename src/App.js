@@ -5,7 +5,7 @@ import SearchBox from './searchBox';
 import MapDisplay from './MapDisplay'
 import TideInfo from './tideInfo';
 import SmoothCollapse from 'react-smooth-collapse';
-import TideChartDisplay from './tideChartDisplay';
+import TideChart from './tideChart'
 import {toggleCollapse} from './uiControlFunctions';
 import {selectTideDropDown} from './features/uiControl/uiControlSlice'
 import { useLoadScript } from '@react-google-maps/api';
@@ -37,7 +37,7 @@ if(!isLoaded) {
         <SmoothCollapse expanded={collapseState} collapsedHeight={0}>
       
           <div className="App-Info">
-            <TideChartDisplay/>
+            <TideChart/>
             <TideInfo/> 
           </div> 
         </SmoothCollapse>
