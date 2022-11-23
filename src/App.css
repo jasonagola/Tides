@@ -1,46 +1,55 @@
 .App {
   text-align: center;
-  display: grid;
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-columns: repeat(6, 1fr);
-  /* max-width: 100vh; */
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  max-height: 100vh;
 }
 
 .App-header {
   background-color: #282c34;
-  grid-row: 1;
-  grid-column: 1/7;
+  height: 20vh;
+  min-height: 200px;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  font-size: calc(1px + 2vmin);
+  /* font-size: calc(1px + 2vmin); */
   color: white;
 }
 
-.App-body {
-  grid-column: 1/7;
-  grid-row: 2/6;
-  display: grid;
-  grid-template-rows: repeat (6, 1fr);
+h1 {
+  margin: auto;
 }
 
+.App-body {
+  height: 80vh;
+}
+
+
+
+/*
 .App-Info {
-  position: relative;
-  grid-row: 2/6;
-  grid-column: 1/7;
+  position: absolute;
+  grid-row: 6/6;
   background-color: azure;
 
 }
 
-.App-map {
+.App-Info-Show {
   position: relative;
-  grid-row: 1/6;
-  grid-column: 1/7;
-  margin:.5%; 
-  
+  grid-row: 3 / 6;
+  background-color: azure;
+  overflow: scroll;
+  max-height: 80%;
 }
 
+.App-map {
+  position: absolute;
+  grid-row: 1/6;
+  margin:.5%; 
+}
+
+.App-map-collapsed {
+  position: absolute;
+  grid-row: 3/6;
+  margin:.5%;
+  min-height: 20%;
+  
+} */

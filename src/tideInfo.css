@@ -1,4 +1,15 @@
+.tideInfo-box {
+    width: 100vw
+}
+
 table, thead, tbody, td, th {
     border: 1px solid black;
 
+}
+
+#chart {
+    align-self: center;
+    width: 95%;
+    margin: 0%;
+    padding: 2%
 }

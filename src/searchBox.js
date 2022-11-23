@@ -9,7 +9,7 @@ import getTides from './gatewayProxy';
 
 import {searchParamsPosition, updateName, updatePosition } from './features/searchParams/searchParamsSlice'
 import { updateMapCenter } from './features/searchParams/searchParamsSlice';
-import "./search.css";
+import "./searchBox.css";
 import { tideSearchButton } from './uiControlFunctions';
 import { useSelector } from 'react-redux';
 
