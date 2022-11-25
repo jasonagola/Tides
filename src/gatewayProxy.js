@@ -1,6 +1,5 @@
 import axios from 'axios';
 import store from './features/store';
-import {useSelector} from 'react-redux';
 import { updateTideInfo } from './features/tide/tideSlice';
 import { toggleTideDropDown } from './features/uiControl/uiControlSlice';
 
@@ -48,12 +47,10 @@ function parseTideGet(response) {
     store.dispatch(updateTideInfo(tideInfo))
     const tideToggle = store.getState().uiControl.tideDropDown
     // console.log(tideToggle)
-    if (tideToggle === false) {
-        store.dispatch(toggleTideDropDown())
+    if (tideToggle === true) {
+        store.dispatch(toggleTideDropDown(false))
+
     }
     }
-
-
-
 
 export default getTides

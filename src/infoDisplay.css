@@ -1,23 +1,27 @@
-.InfoDisplay {
+/* .InfoDisplay {
     height: 80vh
 
 }
+*/
 
 #App-Map{
-    height:80vh;
+    height: 80vh;
 }
 
-.App-Map-Collapsed {
+/* .App-Map-Collapsed {
     height: 20vh;
 }
+*/
 
 #App-Info {
-    height: 0;
+    height: 0vh;
     overflow: scroll;
     
 }
 
+/*
+
 .App-Info-Show {
-    height: 60vh;
+    height: vh;
     overflow: scroll;
-}
+}  */
