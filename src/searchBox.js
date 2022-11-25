@@ -12,7 +12,7 @@ import { updateMapCenter } from './features/searchParams/searchParamsSlice';
 import "./searchBox.css";
 import { tideSearchButton } from './uiControlFunctions';
 import { useSelector } from 'react-redux';
-
+import { toggleTideDropDown } from './features/uiControl/uiControlSlice';
 
 
 function SearchBox() {
@@ -38,12 +38,13 @@ function SearchBox() {
     // }
  
 
-    const handleSearch = () => {
-        getTides()
+    async function handleSearch() {
+        await getTides()
         //Local Backend
         //getTides()
         //
         store.dispatch(updateMapCenter(searchedMarkerPosition))
+    
         
     }
 

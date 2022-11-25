@@ -22,7 +22,9 @@ h1 {
   height: 80vh;
 }
 
-
+.Chart {
+  height: 50vh
+}
 
 /*
 .App-Info {

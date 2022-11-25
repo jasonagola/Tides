@@ -4,12 +4,16 @@ import { createSlice } from "@reduxjs/toolkit";
 const options = {
     name: 'uiControl',
     initialState: {
-        tideDropDown: false,
+        tideDropDown: true,
 
     },
     reducers: {
-        toggleTideDropDown: (state) => {
-            state.tideDropDown = !state.tideDropDown
+        toggleTideDropDown: (state, action) => {
+            console.log(action.payload + " Is this what you expected?")
+            return { 
+                ...state,
+                tideDropDown: action.payload
+            }
         }
     }
 }

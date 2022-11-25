@@ -58,7 +58,7 @@ function TideInfo() {
 
     const reportingStatus = () => {
         if (mareaApiStatus == 200) {
-            console.log(dataSource)
+            // console.log(dataSource)
             // console.log(distanceFromSearchMarker)
             // console.log(distanceFromSearchMarker.toFixed(1))
             if (dataSource == "STATION") {

@@ -69,8 +69,8 @@ function Map(isLoaded) {
 
     const onMapClick = (event) => {
         const tideToggleState = store.getState().uiControl.tideDropDown
-        console.log(tideToggleState)
-        if (!tideToggleState) {
+        // console.log(tideToggleState)
+        if (tideToggleState) {
             // console.log("onMapClick", event)
             const position = ({lat: event.latLng.lat(), lng: event.latLng.lng()})
             store.dispatch(updateMapCenter(position))
@@ -110,12 +110,12 @@ function Map(isLoaded) {
             <Marker 
                 key={reportedLatLng.lat} 
                 position={reportedLatLng}
-                icon = {{
-                    label: 'Tide Reporting Station',
-                    // url: '/src/resources/icons/Buoy.png',
-                    scaledSize: new window.google.maps.Size(50, 50)
-                }
-                }
+                icon = {'/src/resources/icons/Buoy.png'}
+                //     label: 'Tide Reporting Station',
+                
+                //     scaledSize: new window.google.maps.Size(50, 50)
+                // }
+                // }
             />
            
         </GoogleMap>

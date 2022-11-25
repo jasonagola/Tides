@@ -1,16 +1,12 @@
 import store from './features/store';
 import { toggleTideDropDown } from './features/uiControl/uiControlSlice';
-import gsap from 'gsap';
 
-var transitionTimeline = gsap.timeline({pausued: true});
-transitionTimeline.to("#App-Map", {duration: .5, height: '20vh'});
-transitionTimeline.to("#App-Info", {duration: .5, height: '60vh'},"<");
-transitionTimeline.reversed(true)
 
 const mapClickTideToggle = () => {
     const tideToggleState = store.getState().uiControl.tideDropDown
-    if (tideToggleState === true) {
-        store.dispatch(toggleTideDropDown())
+    console.log(tideToggleState + 'map click state')
+    if (tideToggleState === false) {
+        store.dispatch(toggleTideDropDown(!tideToggleState))
     }
 }
 
@@ -30,17 +26,10 @@ const tideSearchButton = () => {
 }
 
 
-const animateTransition = () => {
-    console.log('Toggled!!!!!')
-    const toggleState = store.getState().uiControl.tideDropDown
-    toggleState ? transitionTimeline.play():transitionTimeline.reverse()
-
-}
-
 function toggleCollapse() { 
-    store.dispatch(toggleTideDropDown());
-    console.log(store.getState().uiControl.tideDropDown)
+    const tideToggleState = store.getState().uiControl.tideDropDown
+    store.dispatch(toggleTideDropDown(!tideToggleState));
 }
     
 
-export { animateTransition, mapClickTideToggle, tideSearchButton, toggleCollapse }
+export { mapClickTideToggle, tideSearchButton, toggleCollapse }

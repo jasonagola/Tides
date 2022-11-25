@@ -4,14 +4,15 @@ import { useSelector } from 'react-redux'
 import SearchBox from './searchBox';
 import InfoDisplay from './infoDisplay';
 
-import {toggleCollapse} from './uiControlFunctions';
+import { toggleCollapse} from './uiControlFunctions';
 import {selectTideDropDown} from './features/uiControl/uiControlSlice'
 import { useLoadScript } from '@react-google-maps/api';
+import TideChart from './tideChart';
 
 const placesLibrary = ['places'];
 
 function App() {
-
+  
   const collapseState = useSelector(selectTideDropDown)
 
   const { isLoaded } =  useLoadScript({
@@ -34,7 +35,6 @@ if(!isLoaded) {
         <button id='toggleButton' onClick={(toggleCollapse)}>TOGGLE ME</button>
         <InfoDisplay isLoaded={isLoaded}/>
       </div>
-        
     </div>
   );
 }
