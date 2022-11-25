@@ -15,10 +15,12 @@ function TideChart() {
             const date = new Date(extreme.datetime)
             data.push({
                 date: date.toISOString(),
+                // date: date,
                 value: extreme.height,
                 status: extreme.state
             })
         }))
+        
     }
 
     // const dateLabelTool = () => {
@@ -33,17 +35,19 @@ function TideChart() {
     // }
 
     tideExtremesParsingTool()
+    console.log(data)
 
     if (extremes!=[]) {
         return (
-            <ResponsiveContainer width='100%' height={'200'}>
-                <AreaChart data={data} width='90%'>
+            <ResponsiveContainer width='100%' height={200}>
+                <AreaChart data={data}>
                         <Area type="monotone" label='true' dataKey='value' stroke='#2451B7' fillColor="url(#color)" fontSize={10}/>
                         <XAxis 
                             dataKey='date' 
-                            tickFormatter={(str)=> {
-                                const dateDataPoint = parseISO(str);
-                                    return format(dateDataPoint,"MMM d")
+                            tickFormatter={(date)=> {
+                                const dateDataPoint = new Date (parseISO(date));
+                                    // return dateDataPoint
+                                    return format(dateDataPoint, "MMM-d")
                                 }}
                             allowDuplicatedCataeogry='false'
                             style={{fontSize:'10'}}
@@ -53,9 +57,8 @@ function TideChart() {
                         <CartesianGrid opacity={0.1} vertical={false}/>
                 </AreaChart>
             </ResponsiveContainer>
-            
         ) 
-    }  
+    } 
 }
 
 function CustomToolTip({active, payload, label}) {
