@@ -32,7 +32,7 @@ if(!isLoaded) {
         {/* <button onClick={()=>toggleCollapse()}></button> */}
       </div>
       <div className='App-body'>
-        <button id='toggleButton' onClick={(toggleCollapse)}>TOGGLE ME</button>
+        {/* <button id='toggleButton' onClick={(toggleCollapse)}>TOGGLE ME</button> */}
         <InfoDisplay isLoaded={isLoaded}/>
       </div>
     </div>

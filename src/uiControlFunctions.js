@@ -10,6 +10,14 @@ const mapClickTideToggle = () => {
     }
 }
 
+const tideInfoToggle = () => {
+    const tideToggleState = store.getState().uiControl.tideDropDown;
+    const mareaApiStatus = store.getState().tide.mareaApiStatus
+    console.log("I should've clicked this")
+    if (tideToggleState && mareaApiStatus === true) {
+        store.dispatch(toggleTideDropDown(false))
+    }
+}
 
 const tideSearchButton = () => {
     const searchedName = store.getState().searchParams.name
@@ -32,4 +40,4 @@ function toggleCollapse() {
 }
     
 
-export { mapClickTideToggle, tideSearchButton, toggleCollapse }
+export { tideInfoToggle, mapClickTideToggle, tideSearchButton, toggleCollapse }

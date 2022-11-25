@@ -3,10 +3,12 @@ import { useSelector } from 'react-redux';
 import { ResponsiveContainer, XAxis, YAxis, Area, Tooltip, CartesianGrid, AreaChart } from 'recharts';
 import { selectTideExtremes } from './features/tide/tideSlice';
 import {format, parseISO } from 'date-fns';
+import store from './features/store';
 
 
 function TideChart() {
     const extremes = useSelector(selectTideExtremes)
+    console.log("This is the status of extremes:"+ extremes)
 
     const data = []
 
@@ -35,19 +37,22 @@ function TideChart() {
     // }
 
     tideExtremesParsingTool()
-    console.log(data)
 
-    if (extremes!=[]) {
+    if (store.getState().tide.mareaApiStatus === 200) {
         return (
+            <div>
+            {console.log("Chart Render")}
+            
             <ResponsiveContainer width='100%' height={200}>
                 <AreaChart data={data}>
                         <Area type="monotone" label='true' dataKey='value' stroke='#2451B7' fillColor="url(#color)" fontSize={10}/>
                         <XAxis 
                             dataKey='date' 
                             tickFormatter={(date)=> {
-                                const dateDataPoint = new Date (parseISO(date));
-                                    // return dateDataPoint
-                                    return format(dateDataPoint, "MMM-d")
+                                // return parseISO(date)
+                                // const dateDataPoint = new Date (parseISO(date));
+                                // return dateDataPoint
+                                return format(parseISO(date), "MMM-dd")
                                 }}
                             allowDuplicatedCataeogry='false'
                             style={{fontSize:'10'}}
@@ -57,8 +62,15 @@ function TideChart() {
                         <CartesianGrid opacity={0.1} vertical={false}/>
                 </AreaChart>
             </ResponsiveContainer>
+            </div>
         ) 
-    } 
+    } else {
+        return (
+            <div>
+                <p>Tide Chart</p>
+            </div>
+        )
+    }
 }
 
 function CustomToolTip({active, payload, label}) {

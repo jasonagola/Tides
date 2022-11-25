@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectDataSource, selectMareaApiStatus, selectReportedPositionDistance, selectReportingPosition, selectTideExtremes } from './features/tide/tideSlice';
 import { format } from 'date-fns';
 import TideChart from './tideChart'
+import {tideInfoToggle} from './uiControlFunctions'
 import './tideInfo.css'
 
 
@@ -71,10 +72,11 @@ function TideInfo() {
                     
         }
     }
+    
 
     return (
         <div className='tideInfo-box'>
-            <h3>Tide Info</h3>
+            <h3 onClick={tideInfoToggle()}>Tide Info</h3>
             <div id='chart'>
                 <TideChart/>
             </div>
@@ -83,7 +85,7 @@ function TideInfo() {
                 {nextTides()}
             </div>
             
-            <table>
+            <table id='table'>
                 <thead>
                     <th>DATE</th>
                     <th>STATUS</th>
