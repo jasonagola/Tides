@@ -3,7 +3,7 @@ I wanted to create a simple and clean way to easily grab tide data from your cur
 
 ## Live 
 I currently have an example deployed using AWS Amplify along with API Gateway and Lambda running a reverse proxy server.
-/////URL/////
+https://main.d2i0gywkgp4uj5.amplifyapp.com
 
 ## Technologies 
 Created with: 
